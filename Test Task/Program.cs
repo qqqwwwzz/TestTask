@@ -70,12 +70,12 @@ public class Scene
 
     public Scene()
     {
-        objects.Add(new Wall(1, 0, 0, 5, -5));
-        objects.Add(new Wall(2, 5, -5, 3, -15));
-        objects.Add(new Wall(3, 3, -15, 5, -25));
-        objects.Add(new Wall(4, 5, -25, 0, 0));
+        objects.Add(new Wall(1, 0, 0, 10, 0));
+        objects.Add(new Wall(2, 10, 0, 10, -10));
+        objects.Add(new Wall(3, 10, -10, 0, -10));
+        objects.Add(new Wall(4, 0, -10, 0, 0));
 
-        objects.Add(new Ball(5, -6, 2, 10, 10));
+        objects.Add(new Ball(5, -6, 2, 1, 0,6f));
     }
 }
 
