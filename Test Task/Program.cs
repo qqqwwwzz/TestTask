@@ -1,17 +1,12 @@
-﻿using Leopotam.Ecs;
+using Leopotam.Ecs;
 using System.Threading;
 
 public abstract class SceneObject
 {
-    /// <summary>
-    /// Координаты объекта.
-    /// </summary>
     public float X { get; set; }
     public float Y { get; set; }
     public int Id { get; set; }
-    /// <summary>
-    /// Обновление состояния системы.
-    /// </summary>
+
     public abstract void Update();
 }
 
@@ -23,10 +18,11 @@ public class Wall : SceneObject
     /// <summary>
     /// Экземпляр объекта стена.
     /// </summary>
-    /// <param name="x">Координата X.</param>
-    /// <param name="y">Координата Y.</param>
-    /// <param name="length">Длина стены.</param>
-    /// <param name="angle">Угол поворота стены.</param>
+    /// <param name="id">Айди стены</param>
+    /// <param name="startX">Стартовая координата X</param>
+    /// <param name="startY">Стартовая координата Y</param>
+    /// <param name="endX">Конечная координата X</param>
+    /// <param name="endY">Конечная координата Y</param>
     public Wall(int id, float startX, float startY, float endX, float endY)
     {
         Id = id;
@@ -75,7 +71,7 @@ public class Scene
         objects.Add(new Wall(3, 10, -10, 0, -10));
         objects.Add(new Wall(4, 0, -10, 0, 0));
 
-        objects.Add(new Ball(5, -6, 2, 1, 0,6f));
+        objects.Add(new Ball(5, -5, 2, 1, 0.6f));
     }
 }
 
